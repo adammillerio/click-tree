@@ -41,6 +41,10 @@ home - home automation (hass-cli)
 This library uses [anytree](https://anytree.readthedocs.io/en/stable/index.html) 
 for constructing and rendering the tree.
 
+The original inspiration for this tree implementation was based off of the 
+[click-command-tree](https://github.com/whwright/click-command-tree) library 
+created by Harrison Wright.
+
 # Usage
 
 ## Parameter
@@ -113,8 +117,50 @@ style: Optional[AbstractStyle]. Override the anytree style used to render
 For manual implementation, the `ignore_names` and `style` parameters can be 
 provided to `tree.render()`.
 
-# Credits
+# Development
 
-The original inspiration for this tree implementation was based off of the 
-[click-command-tree](https://github.com/whwright/click-command-tree) library 
-created by Harrison Wright.
+Install in development mode:
+```bash
+pip3 install -e '.[dev]'
+```
+
+## Type Checking
+
+Ensure no type errors are present with [pyre](https://github.com/facebook/pyre-check):
+
+```bash
+pyre check              
+ƛ No type errors found
+```
+
+## Formatting
+
+Format code with the [black](https://github.com/psf/black) formatter:
+
+```bash
+black click_tree
+All done! ✨ 🍰 ✨
+```
+
+## Testing
+
+Ensure tests pass with [TestSlide](https://github.com/facebook/TestSlide):
+
+```bash
+cd test
+testslide test_click_tree.py     
+test_click_tree.ClickTreeTests
+  test_click_tree
+  test_click_tree_param
+  test_click_tree_param_not_bool
+  test_click_tree_param_not_called
+  test_click_tree_render
+  test_click_tree_scoped
+                                                               --_ |""---__
+Executed 6 examples in 0.1s:                                |'.|  ||  .    """|
+  Successful: 6                                             | ||  || /|\""-.  |
+  Failed: 0                                                 | ||  ||  |    |  |
+  Skipped: 0                                                | ||  ||  |   \|/ |
+  Not executed: 0                                           |."|  ||  --"" '__|
+https://testslide.readthedocs.io/
+```

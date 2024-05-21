@@ -12,8 +12,8 @@ setup(
     download_url="https://github.com/adammillerio/click-tree/archive/v0.0.1.tar.gz",
     keywords=[],
     classifiers=[
-        "Development Status :: 5 - Production",
-        "Intended Audience :: End Users/Desktop",
+        "Development Status :: 5 - Production/Stable",
+        "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.10",
@@ -27,4 +27,5 @@ setup(
         "anytree",
         "click",
     ],
+    extras_require={"dev": ["black", "pyre-check", "testslide"]},
 )
