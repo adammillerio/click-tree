@@ -45,6 +45,14 @@ The original inspiration for this tree implementation was based off of the
 [click-command-tree](https://github.com/whwright/click-command-tree) library 
 created by Harrison Wright.
 
+# Install
+
+Click Tree is a library which can be installed via [PyPI](https://pypi.org/project/click-tree/):
+
+```bash
+pip install click-tree
+```
+
 # Usage
 
 ## Parameter
@@ -132,6 +140,9 @@ Ensure no type errors are present with [pyre](https://github.com/facebook/pyre-c
 pyre check              
 ƛ No type errors found
 ```
+
+**Note**: Pyre daemonizes itself on first run for faster subsequent executions. Be
+sure to shut it down with `pyre kill` when finished.
 
 ## Formatting
 
